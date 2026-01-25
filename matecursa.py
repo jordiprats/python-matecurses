@@ -524,11 +524,14 @@ PATRONS_MITJA = [
 ]
 
 PATRONS_DIFICIL = [
-  "(-a + b) * (c - d)",
-  "(a - b) + (-c * d)",
-  "(a + -b) - (c * d)",
-  "(-a + b) - (c + -d)",
+  "(a + b) * (c - d)",
+  "(a - b) + (c * d)",
+  "(a + b) - (c * d)",
+  "(a - b) - (c + d)",
 ]
+
+def fmt(n):
+  return f"({n})" if n < 0 else str(n)
 
 def genera_operacio(mode):
   if mode == "mix":
@@ -549,10 +552,10 @@ def genera_operacio(mode):
     nums = {k: random.choice([randrange(1,10), -randrange(1,10)]) for k in ["a","b","c","d"]}
 
   expr = patro
-  for k,v in nums.items():
-    expr = expr.replace(k, str(v))
+  for k, v in nums.items():
+    expr = expr.replace(k, fmt(v))
 
-  return expr.replace("×", "x") + " ="
+  return expr + " ="
 
 @click.command()
 @click.option('--file', default='operacions_combinades.pdf')
