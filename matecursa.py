@@ -67,8 +67,7 @@ def sumes(file, pages, min, max, min_segona_unitat, max_segona_unitat, multiplic
 @click.option('--pages', default=20, help='number of pages')
 @click.option('--min', default=-20, help='min int')
 @click.option('--max', default=20, help='max int')
-@click.option('--disable-total-operacions', is_flag=True, default=True, help='Elimina missatge de total de operacions')
-def enters_sumes_restes(file, pages, min, max, disable_total_operacions):
+def enters_sumes_restes(file, pages, min, max):
   pdf = FPDF(orientation='P', unit='mm', format='A4')
 
   for pagina in range(0, pages):
@@ -76,11 +75,6 @@ def enters_sumes_restes(file, pages, min, max, disable_total_operacions):
     pdf.set_font('helvetica', '', 15.0)
     pdf.set_xy(5.0, 18)
     pdf.cell(w=0,h=0, txt='Nom: ........................................................................... Data: ...................................', ln=0 )
-
-    if not disable_total_operacions:
-      pdf.set_xy(5.0, 276)
-      pdf.set_font('helvetica', '', 25.0)
-      pdf.cell(w=0,h=0, txt='Operacions fetes en 2 minuts .......................', ln=0 )
 
     pdf.set_font('helvetica', '', 15.0)
 
