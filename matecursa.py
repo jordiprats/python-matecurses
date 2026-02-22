@@ -403,7 +403,6 @@ def divisions(file, pages, min_dividend, max_dividend, min_divisor, max_divisor,
 
 # ─────────────────────────────────────────────────────────────
 #  FRACCIONS  (1r ESO)
-#  Estil Col·legi Lestonnac:
 #    1. Operacions combinades (·, :, +, –, parèntesis)
 #    2. Simplificació fins a irreductible
 #    3. Fracció d'un enter
@@ -741,7 +740,7 @@ def _seccio_fraccio_de_fraccio(pdf, y0, n_ex=6):
               help='Tipus: combinades | simplificacio | fraccio_enter | fraccio_de_fraccio | mix')
 def fraccions(file, pages, mode):
   """
-  Genera fulls d'exercicis de fraccions estil 1r ESO (Col·legi Lestonnac).
+  Fraccions estil 1r ESO
 
   Modes:
     mix              - Les 4 seccions en un sol full (per defecte)
@@ -1034,4 +1033,3 @@ matecursa.add_command(fraccions)
 
 if __name__ == '__main__':
   matecursa()
-  
