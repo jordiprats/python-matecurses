@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>matecurses</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CLI Reference";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> matecurses
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">CLI Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#matecursa">matecursa</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#divisions">divisions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enters-sumes-restes">enters-sumes-restes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fraccions">fraccions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multiplicacions">multiplicacions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multiplicacions-vertical">multiplicacions-vertical</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#operacions-combinades">operacions-combinades</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#problemes">problemes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restes">restes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restes-vertical">restes-vertical</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sumes">sumes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sumes-horitzontal">sumes-horitzontal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#taules-multiplicar">taules-multiplicar</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">matecurses</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">CLI Reference</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cli-reference">CLI Reference</h1>
+<p>This page provides documentation for our command line tools.</p>
+<h5 id="matecursa">matecursa</h5>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa [OPTIONS] COMMAND [ARGS]...
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="divisions">divisions</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa divisions [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>divisions_hortizontal.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--min-dividend</code></td>
+<td>integer</td>
+<td>min dividend</td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td><code>--max-dividend</code></td>
+<td>integer</td>
+<td>max dividend</td>
+<td><code>9999</code></td>
+</tr>
+<tr>
+<td><code>--min-divisor</code></td>
+<td>integer</td>
+<td>min divisor</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>--max-divisor</code></td>
+<td>integer</td>
+<td>max divisor</td>
+<td><code>9</code></td>
+</tr>
+<tr>
+<td><code>--disable-marge-calculs</code></td>
+<td>boolean</td>
+<td>deixa marge per calcul</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="enters-sumes-restes">enters-sumes-restes</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa enters-sumes-restes [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>enters_sumes_restes.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>-20</code></td>
+</tr>
+<tr>
+<td><code>--max</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="fraccions">fraccions</h6>
+<p>Fraccions estil 1r ESO</p>
+<p>Modes:
+  mix              - Les 4 seccions en un sol full (per defecte)
+  combinades       - Només operacions combinades (·, :, +, –, parèntesis)
+  simplificacio    - Simplifica fraccions grans fins a la irreductible
+  fraccio_enter    - Fracció d'un nombre enter
+  fraccio_de_fraccio - Fracció de fracció d'un enter</p>
+<p>Exemples:
+  python matecursa.py fraccions
+  python matecursa.py fraccions --mode combinades --pages 3
+  python matecursa.py fraccions --mode mix --pages 5 --file fraccions.pdf</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa fraccions [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>fitxer de sortida</td>
+<td><code>fraccions.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>nombre de fulls</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>--mode</code></td>
+<td>choice (<code>combinades</code> &#x7C; <code>simplificacio</code> &#x7C; <code>fraccio_enter</code> &#x7C; <code>fraccio_de_fraccio</code> &#x7C; <code>mix</code>)</td>
+<td>Tipus: combinades</td>
+<td>simplificacio</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="multiplicacions">multiplicacions</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa multiplicacions [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>multiplicacions.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--max</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>--min-segona-unitat</code></td>
+<td>integer</td>
+<td>max int segona unitat</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>--max-segona-unitat</code></td>
+<td>integer</td>
+<td>max int segona unitat</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>--multiplicador</code></td>
+<td>integer</td>
+<td>multiplicador</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--disable-total-operacions</code></td>
+<td>boolean</td>
+<td>Elimina missatge de total de operacions</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="multiplicacions-vertical">multiplicacions-vertical</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa multiplicacions-vertical [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>multiplicacions_vertical.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--min-factor1</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td><code>--max-factor1</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>9999</code></td>
+</tr>
+<tr>
+<td><code>--min-factor2</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--max-factor2</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>99</code></td>
+</tr>
+<tr>
+<td><code>--disable-total-operacions</code></td>
+<td>boolean</td>
+<td>Elimina missatge de total de operacions</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="operacions-combinades">operacions-combinades</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa operacions-combinades [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>N/A</td>
+<td><code>operacions_combinades.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>N/A</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>--mode</code></td>
+<td>choice (<code>facil</code> &#x7C; <code>mitja</code> &#x7C; <code>dificil</code> &#x7C; <code>mix</code>)</td>
+<td>Nivell de dificultat: facil, mitja, dificil o mix</td>
+<td><code>mix</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="problemes">problemes</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa problemes [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>problemes.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pagines</code></td>
+<td>integer</td>
+<td>numero de pàgines</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td><code>--sumes-min</code></td>
+<td>integer</td>
+<td>sumes min int</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>--sumes-max</code></td>
+<td>integer</td>
+<td>sumes max int</td>
+<td><code>150</code></td>
+</tr>
+<tr>
+<td><code>--mul-min</code></td>
+<td>integer</td>
+<td>multiplicacions min int</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>--mul-max</code></td>
+<td>integer</td>
+<td>multiplicacions max int</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="restes">restes</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa restes [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>restes.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--max</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>--multiplicador</code></td>
+<td>integer</td>
+<td>multiplicador</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="restes-vertical">restes-vertical</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa restes-vertical [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>restes_vertical.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>--max</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>999</code></td>
+</tr>
+<tr>
+<td><code>--disable-total-operacions</code></td>
+<td>boolean</td>
+<td>Elimina missatge de total de operacions</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="sumes">sumes</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa sumes [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>sumes.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--max</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>--min-segona-unitat</code></td>
+<td>integer</td>
+<td>max int segona unitat</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>--max-segona-unitat</code></td>
+<td>integer</td>
+<td>max int segona unitat</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>--multiplicador</code></td>
+<td>integer</td>
+<td>multiplicador</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--disable-total-operacions</code></td>
+<td>boolean</td>
+<td>Elimina missatge de total de operacions</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="sumes-horitzontal">sumes-horitzontal</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa sumes-horitzontal [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>sumes_hortizontal.pdf</code></td>
+</tr>
+<tr>
+<td><code>--pages</code></td>
+<td>integer</td>
+<td>number of pages</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--min1</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>--max1</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>900</code></td>
+</tr>
+<tr>
+<td><code>--min2</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>--max2</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>300</code></td>
+</tr>
+<tr>
+<td><code>--min3</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>--max3</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>--disable-marge-calculs</code></td>
+<td>boolean</td>
+<td>deixa marge per calcul</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h6 id="taules-multiplicar">taules-multiplicar</h6>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-text">matecursa taules-multiplicar [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file</code></td>
+<td>text</td>
+<td>output file</td>
+<td><code>taules_multiplicar.pdf</code></td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td>integer</td>
+<td>min int</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>--max</code></td>
+<td>integer</td>
+<td>max int</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-02-22 16:25:49.636753+00:00
+-->
